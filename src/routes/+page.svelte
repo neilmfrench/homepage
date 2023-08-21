@@ -2,8 +2,14 @@
   Hello world!
 </h1>
 
-<style lang="postcss">
+<!-- <style>
   :global(html) {
-    background-color: theme(colors.gray.600);
+    background-color: var(--main-bg);
   }
-</style>
+</style> -->
+
+<!-- <style lang="postcss">
+  :global(body) {
+    background-color: var(--main-bg)
+  }
+</style> -->
