@@ -23,5 +23,5 @@
       <slot />
     </main>
   </div>
-  <Bottombar />
 </div>
+<Bottombar />
