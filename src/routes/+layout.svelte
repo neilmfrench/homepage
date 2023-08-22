@@ -13,32 +13,15 @@
   <Explorer />
   <div class="w-full">
     <Tabsbar />
-    <main id="main-editor" class="content text-[color:var(--text-color)] flex-1 h-[85vh] overflow-y-auto scroll-smooth p-8h">
+    <main id="main-editor" class="
+      max-[600px]:px-4 max-[600px]:py-8 
+      font-['JetBrains_Mono'] text-[color:var(--text-color)] flex-1 h-[85vh] overflow-y-auto scroll-smooth p-8h 
+      [&::-webkit-scrollbar]:w-[15px] 
+      [&::-webkit-scrollbar-track]:border-l-[#1e1f29] [&::-webkit-scrollbar-track]:border-l [&::-webkit-scrollbar-track]:border-solid [&::-webkit-scrollbar-track]:bg-[var(--scrollbar-track-bg)] 
+      [&::-webkit-scrollbar-thumb]:border-l-[#1e1f29] [&::-webkit-scrollbar-thumb]:border-l [&::-webkit-scrollbar-thumb]:border-solid [&::-webkit-scrollbar-thumb]:bg-[var(--scrollbar-thumb-bg)]" 
+    >
       <slot />
     </main>
   </div>
   <Bottombar />
 </div>
-
-<style lang="postcss">
-  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
-  .content {
-    font-family: "JetBrains Mono", monospace;
-  }
-  .content::-webkit-scrollbar {
-    @apply w-[15px];
-  }
-  .content::-webkit-scrollbar-track {
-    @apply border-l-[#1e1f29] border-l border-solid;
-    background: var(--scrollbar-track-bg);
-  }
-  .content::-webkit-scrollbar-thumb {
-    @apply border-l-[#1e1f29] border-l border-solid;
-    background: var(--scrollbar-thumb-bg);
-  }
-  @media screen and (max-width: 600px) {
-    .content {
-      @apply px-4 py-8;
-    }
-  }
-</style>
