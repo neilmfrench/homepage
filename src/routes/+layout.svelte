@@ -1,10 +1,10 @@
 <script>
-  // import "../app.css";
-
-  // import "@fontsource/jetbrains-mono/300.css";
-  // import "@fontsource/jetbrains-mono/400.css";
-  // import "@fontsource/jetbrains-mono/500.css";
-  // import "@fontsource/source-sans-pro/400.css";
+  import '$lib/theme.js';
+  import "../app.css";
+  import "@fontsource/jetbrains-mono/300.css";
+  import "@fontsource/jetbrains-mono/400.css";
+  import "@fontsource/jetbrains-mono/500.css";
+  import "@fontsource/source-sans-pro/400.css";
 /* @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap'); */
 
@@ -34,7 +34,7 @@
 </div>
 <Bottombar />
 
-<style global>
+<!-- <style global>
   @import "../app.css";
   @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
@@ -42,4 +42,4 @@
   @import "@fontsource/jetbrains-mono/400.css";
   @import "@fontsource/jetbrains-mono/500.css";
   @import "@fontsource/source-sans-pro/400.css"; */
-</style>
+</style> -->
