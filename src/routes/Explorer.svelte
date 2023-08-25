@@ -1,98 +1,80 @@
 <script lang="ts">
   import ChevronRight from "$lib/components/icons/ChevronRight.svelte";
-  
+  import ReactIcon from "$lib/components/icons/ReactIcon.svelte";
+  import HtmlIcon from "$lib/components/icons/HtmlIcon.svelte";
+  import CssIcon from "$lib/components/icons/CssIcon.svelte";
+  import JsIcon from "$lib/components/icons/JsIcon.svelte";
+  import JsonIcon from "$lib/components/icons/JsonIcon.svelte";
+  import MarkdownIcon from "$lib/components/icons/MarkdownIcon.svelte";
+
   const explorerItems = [
-    {
-      name: 'crds',
-      path: '/crds',
-      toggleable: true,
-      icon: 'folder_icon.svg',
-      icon_open: 'folder_open_icon.svg',
-      children: [],
-    },
     {
       name: 'home.jsx',
       path: '/',
-      icon: 'react_icon.svg',
-      toggleable: false,
+      Icon: ReactIcon,
     },
     {
       name: 'about.html',
       path: '/about',
-      icon: 'html_icon.svg',
-      toggleable: false,
+      Icon: HtmlIcon,
     },
     {
       name: 'contact.css',
       path: '/contact',
-      icon: 'css_icon.svg',
-      toggleable: false,
+      Icon: CssIcon,
     },
     {
       name: 'projects.js',
       path: '/projects',
-      icon: 'js_icon.svg',
-      toggleable: false,
+      Icon: JsIcon
     },
     {
       name: 'articles.json',
       path: '/articles',
-      icon: 'json_icon.svg',
-      toggleable: false,
+      Icon: JsonIcon
     },
     {
       name: 'github.md',
       path: '/github',
-      icon: 'markdown_icon.svg',
-      toggleable: false,
+      Icon: MarkdownIcon
     },
   ];
+  let portfolioOpen = true;
+  const handleClick = () => {
+    portfolioOpen = !portfolioOpen;
+  }
 </script>
 
-<div class="w-[18vw] text-[rgb(225,228,232)] border-r-[color:var(--explorer-border)] border-r border-solid bg-[var(--explorer-bg)] font-['Source_Sans_Pro']">
+<div class="w-[18vw] text-[rgb(225,228,232)] border-r-[color:var(--explorer-border)] border-r border-solid bg-[var(--explorer-bg)] font-['Source_Sans_Pro'] 
+  max-[2000px]:w-[10vw] max-[900px]:w-[20vw] max-[600px]:hidden"
+>
   <p class="font-light uppercase text-[0.9rem] tracking-[1px] mb-3 px-3 py-2">Explorer</p>
   <div>
     <input
       type="checkbox"
       class="absolute opacity-0 z-[-1]"
       id="portfolio-checkbox"
+      checked={portfolioOpen}
+      on:click|preventDefault={handleClick}
     />
     <label
-      class="uppercase font-[bold] text-[0.8rem] tracking-[1px] flex items-center cursor-pointer px-2 py-0"
+      class="uppercase text-[0.8rem] tracking-[1px] flex items-center cursor-pointer px-2 py-0 font-bold"
+      for="portfolio-checkbox"
     >
       <ChevronRight
-        className="transition-transform duration-[0.2s]"
+        className={`transition-transform duration-[0.2s] ${portfolioOpen ? 'transform rotate-90' : ''}`}
       />
       Portfolio
     </label>
     <div
-      class="px-0 py-2 cursor-pointer"
+      class={`px-0 py-2 cursor-pointer ${portfolioOpen ? 'block' : 'hidden'}`}
     >
-      <!-- {explorerItems.map((item) => (
-        <Link href={item.path} key={item.name}>
-          <div
-            className={
-              router.asPath == item.path
-                ? styles.file_selected
-                : styles.file
-            }
-          >
-            <Image
-              src={
-                item.toggleable
-                  ? router.asPath == item.path
-                    ? `/${item.icon_open}`
-                    : `/${item.icon}`
-                  : `/${item.icon}`
-              }
-              alt={item.name}
-              height={18}
-              width={18}
-            />{' '}
-            <p>{item.name}</p>
-          </div>
-        </Link>
-      ))} -->
+    {#each explorerItems as { name, path, Icon }}
+      <div class="flex items-center text-sm px-4 py-[0.2rem] hover:bg-[var(--explorer-hover-bg)]">
+        <Icon />
+        <p class="ml-[5px]">{name}</p>
+      </div>
+    {/each}
     </div>
   </div>
 </div>

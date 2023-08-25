@@ -5,9 +5,7 @@
   import "@fontsource/jetbrains-mono/400.css";
   import "@fontsource/jetbrains-mono/500.css";
   import "@fontsource/source-sans-pro/400.css";
-/* @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap'); */
-
+  
   import Titlebar from "./Titlebar.svelte";
   import Sidebar from "./Sidebar.svelte";
   import Explorer from "./Explorer.svelte";
@@ -33,13 +31,3 @@
   </div>
 </div>
 <Bottombar />
-
-<!-- <style global>
-  @import "../app.css";
-  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
-  /* @import "@fontsource/jetbrains-mono/300.css";
-  @import "@fontsource/jetbrains-mono/400.css";
-  @import "@fontsource/jetbrains-mono/500.css";
-  @import "@fontsource/source-sans-pro/400.css"; */
-</style> -->
