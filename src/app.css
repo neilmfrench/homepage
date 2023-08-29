@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  line-height: normal;
+}
+
 /* GitHub Dark */
 [data-theme='github-dark'] {
   --main-bg: #24292e;

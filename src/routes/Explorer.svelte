@@ -46,9 +46,9 @@
 </script>
 
 <div class="w-[18vw] text-[rgb(225,228,232)] border-r-[color:var(--explorer-border)] border-r border-solid bg-[var(--explorer-bg)] font-['Source_Sans_Pro'] 
-  max-[2000px]:w-[10vw] max-[900px]:w-[20vw] max-[600px]:hidden"
+  min-[2000px]:w-[10vw] max-[900px]:w-[20vw] max-[600px]:hidden"
 >
-  <p class="font-light uppercase text-[0.9rem] tracking-[1px] mb-3 px-3 py-2">Explorer</p>
+  <p class="font-light uppercase text-[0.9rem] tracking-[1px] mb-3 py-2 px-3">Explorer</p>
   <div>
     <input
       type="checkbox"
@@ -64,13 +64,15 @@
       <ChevronRight
         className={`transition-transform duration-[0.2s] ${portfolioOpen ? 'transform rotate-90' : ''}`}
       />
-      Portfolio
+      <!-- <p class="ml-1"> -->
+        Portfolio
+      <!-- </p> -->
     </label>
     <div
       class={`px-0 py-2 cursor-pointer ${portfolioOpen ? 'block' : 'hidden'}`}
     >
     {#each explorerItems as { name, path, Icon }}
-      <div class="flex items-center text-sm px-4 py-[0.2rem] hover:bg-[var(--explorer-hover-bg)]">
+      <div class="flex items-center [font-size:0.875rem] px-4 py-[0.2rem] hover:bg-[var(--explorer-hover-bg)]">
         <Icon />
         <p class="ml-[5px]">{name}</p>
       </div>

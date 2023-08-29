@@ -1,10 +1,10 @@
 <script>
   import '$lib/theme.js';
   import "../app.css";
-  import "@fontsource/jetbrains-mono/300.css";
-  import "@fontsource/jetbrains-mono/400.css";
-  import "@fontsource/jetbrains-mono/500.css";
-  import "@fontsource/source-sans-pro/400.css";
+  // import "@fontsource/jetbrains-mono/300.css";
+  // import "@fontsource/jetbrains-mono/400.css";
+  // import "@fontsource/jetbrains-mono/500.css";
+  // import "@fontsource/source-sans-pro/400.css";
   
   import Titlebar from "./Titlebar.svelte";
   import Sidebar from "./Sidebar.svelte";
