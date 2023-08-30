@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { page } from "$app/stores";
   import ReactIcon from "$lib/components/icons/ReactIcon.svelte";
   import HtmlIcon from "$lib/components/icons/HtmlIcon.svelte";
   import CssIcon from "$lib/components/icons/CssIcon.svelte";
@@ -40,7 +39,7 @@
       Icon: MarkdownIcon
     },
   ];
-  export let route = $page.route.id;
+  export let currentRoute: string;
 </script>
 
 <div class="flex overflow-x-auto bg-[var(--tabs-bg)] 
@@ -48,7 +47,7 @@
   max-[600px]:w-[89.5vw]"
 >
   {#each tabs as { name, path, Icon } }
-    <Tab fileName={name} path={path} active={route == path}>
+    <Tab fileName={name} path={path} active={currentRoute == path}>
       <Icon />
     </Tab>
   {/each}

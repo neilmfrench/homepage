@@ -41,7 +41,7 @@ const sidebarBottomItems = [
     path: '/settings',
   },
 ];
-export let route = $page.route.id;
+export let currentRoute: string;
 </script>
 
 <aside class="
@@ -53,39 +53,43 @@ export let route = $page.route.id;
   bg-[var(--sidebar-bg)] flex flex-col justify-between min-w-[40px] h-[calc(100vh_-_30px_-_25px)]">
   <div class="">
     {#each sidebarTopItems as { Icon, path }}
-      <div class={`
-        cursor-pointer w-full hover:bg-[var(--sidebar-hover-bg)] 
-        ${route == path ? 'border-l-[color:var(--accent-color)] border-l-2 border-solid' : ''}`
-      }>
-        <Icon className="
-          max-[900px]:h-12 max-[900px]:w-12 max-[900px]:p-[0.6rem] 
-          max-[600px]:h-10 max-[600px]:w-10 max-[600px]:p-[0.6rem] 
-          h-12 w-12 
-          block mx-auto my-0 px-0 py-[0.65rem]" 
-          fill={
-            route === path
-              ? 'rgb(225, 228, 232)'
-              : 'rgb(106, 115, 125)'
-          }
-        />
-      </div>
+      <a href={path}>
+        <div class={`
+          cursor-pointer w-full hover:bg-[var(--sidebar-hover-bg)] 
+          ${currentRoute == path ? 'border-l-[color:var(--accent-color)] border-l-2 border-solid' : ''}`
+        }>
+          <Icon className="
+            max-[900px]:h-12 max-[900px]:w-12 max-[900px]:p-[0.6rem] 
+            max-[600px]:h-10 max-[600px]:w-10 max-[600px]:p-[0.6rem] 
+            h-12 w-12 
+            block mx-auto my-0 px-0 py-[0.65rem]" 
+            fill={
+              currentRoute === path
+                ? 'rgb(225, 228, 232)'
+                : 'rgb(106, 115, 125)'
+            }
+          />
+        </div>
+      </a>
     {/each}
   </div>
   <div>
     {#each sidebarBottomItems as { Icon , path }}
-      <div class="cursor-pointer w-full hover:bg-[var(--sidebar-hover-bg)]">
-        <Icon className="
-          max-[900px]:h-12 max-[900px]:w-12 max-[900px]:p-[0.6rem] 
-          max-[600px]:h-10 max-[600px]:w-10 max-[600px]:p-[0.6rem] 
-          h-12 w-12 
-          block mx-auto my-0 px-0 py-[0.65rem]" 
-          fill={
-            route === path
-              ? 'rgb(225, 228, 232)'
-              : 'rgb(106, 115, 125)'
-          }
-        />
-      </div>
+      <a href={path}>
+        <div class="cursor-pointer w-full hover:bg-[var(--sidebar-hover-bg)]">
+          <Icon className="
+            max-[900px]:h-12 max-[900px]:w-12 max-[900px]:p-[0.6rem] 
+            max-[600px]:h-10 max-[600px]:w-10 max-[600px]:p-[0.6rem] 
+            h-12 w-12 
+            block mx-auto my-0 px-0 py-[0.65rem]" 
+            fill={
+              currentRoute === path
+                ? 'rgb(225, 228, 232)'
+                : 'rgb(106, 115, 125)'
+            }
+          />
+        </div>
+      </a>
     {/each}
   </div>
 </aside>

@@ -43,6 +43,8 @@
   const handleClick = () => {
     portfolioOpen = !portfolioOpen;
   }
+
+  export let currentRoute: string;
 </script>
 
 <div class="w-[18vw] text-[rgb(225,228,232)] border-r-[color:var(--explorer-border)] border-r border-solid bg-[var(--explorer-bg)] font-['Source_Sans_Pro'] 
@@ -72,10 +74,10 @@
       class={`px-0 py-2 cursor-pointer ${portfolioOpen ? 'block' : 'hidden'}`}
     >
     {#each explorerItems as { name, path, Icon }}
-      <div class="flex items-center [font-size:0.875rem] px-4 py-[0.2rem] hover:bg-[var(--explorer-hover-bg)]">
+      <a href={path} class="flex items-center [font-size:0.875rem] px-4 py-[0.2rem] hover:bg-[var(--explorer-hover-bg)]">
         <Icon />
         <p class="ml-[5px]">{name}</p>
-      </div>
+      </a>
     {/each}
     </div>
   </div>

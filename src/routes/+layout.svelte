@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
   import '$lib/theme.js';
   import "../app.css";
+  import type { LayoutData } from './$types';
   // import "@fontsource/jetbrains-mono/300.css";
   // import "@fontsource/jetbrains-mono/400.css";
   // import "@fontsource/jetbrains-mono/500.css";
@@ -11,14 +12,15 @@
   import Explorer from "./Explorer.svelte";
   import Tabsbar from "./Tabsbar.svelte";
   import Bottombar from "./Bottombar.svelte";
+  export let data: LayoutData
 </script>
 
 <Titlebar />
 <div class="flex bg-[var(--main-bg)]">
-  <Sidebar />
-  <Explorer />
+  <Sidebar currentRoute={data.route} />
+  <Explorer currentRoute={data.route} />
   <div class="w-full">
-    <Tabsbar />
+    <Tabsbar currentRoute={data.route} />
     <main id="main-editor" class="
       max-[600px]:px-4 max-[600px]:py-8 
       font-['JetBrains_Mono'] text-[color:var(--text-color)] flex-1 h-[85vh] overflow-y-auto scroll-smooth p-8h 
