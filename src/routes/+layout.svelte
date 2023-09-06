@@ -1,5 +1,5 @@
 <script lang="ts">
-  import '$lib/theme.js';
+  // import '$lib/theme.js';
   import "../app.css";
   import type { LayoutData } from './$types';
   // import "@fontsource/jetbrains-mono/300.css";
@@ -23,7 +23,7 @@
     <Tabsbar currentRoute={data.route} />
     <main id="main-editor" class="
       max-[600px]:px-4 max-[600px]:py-8 
-      font-['JetBrains_Mono'] text-[color:var(--text-color)] flex-1 h-[85vh] overflow-y-auto scroll-smooth p-8h 
+      font-['JetBrains_Mono'] text-[color:var(--text-color)] flex-1 h-[85vh] overflow-y-auto scroll-smooth p-8 
       [&::-webkit-scrollbar]:w-[15px] 
       [&::-webkit-scrollbar-track]:border-l-[#1e1f29] [&::-webkit-scrollbar-track]:border-l [&::-webkit-scrollbar-track]:border-solid [&::-webkit-scrollbar-track]:bg-[var(--scrollbar-track-bg)] 
       [&::-webkit-scrollbar-thumb]:border-l-[#1e1f29] [&::-webkit-scrollbar-thumb]:border-l [&::-webkit-scrollbar-thumb]:border-solid [&::-webkit-scrollbar-thumb]:bg-[var(--scrollbar-thumb-bg)]" 
